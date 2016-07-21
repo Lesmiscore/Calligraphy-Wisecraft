@@ -66,6 +66,7 @@ class CalligraphyLayoutInflater extends LayoutInflater implements CalligraphyAct
      */
     private void setUpLayoutFactories(boolean cloned) {
         if (cloned) return;
+        /*
         // If we are HC+ we get and set Factory2 otherwise we just wrap Factory1
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             if (getFactory2() != null && !(getFactory2() instanceof WrapperFactory2)) {
@@ -77,6 +78,7 @@ class CalligraphyLayoutInflater extends LayoutInflater implements CalligraphyAct
         if (getFactory() != null && !(getFactory() instanceof WrapperFactory)) {
             setFactory(getFactory());
         }
+        */
     }
 
     @Override
