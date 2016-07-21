@@ -1,26 +1,27 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.1.2'
-  }
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 24
+        versionCode project.ext.versionCodeInt
+        versionName version
+        consumerProguardFiles 'consumer-proguard-rules.txt'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'consumer-proguard-rules.txt'
+        }
+    }
 }
 
-allprojects {
-  repositories {
-    jcenter()
-  }
-  // Is Release Build?
-  version = getProperty('VERSION_NAME');
-  ext {
-    isReleaseVersion = has("release")
-    versionCodeInt = getProperty('VERSION_CODE').toInteger()
-  }
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.0.0'
 }
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '2.12'
-  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
-}
+apply from: rootProject.file('gradle/deploy.gradle')
