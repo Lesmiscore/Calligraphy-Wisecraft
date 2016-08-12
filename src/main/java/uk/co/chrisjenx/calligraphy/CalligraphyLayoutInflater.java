@@ -46,10 +46,7 @@ class CalligraphyLayoutInflater extends LayoutInflater implements CalligraphyAct
 
     @Override
     public LayoutInflater cloneInContext(Context newContext) {
-        LayoutInflater li = new CalligraphyLayoutInflater(this, newContext, mAttributeId, true);
-        li.setFactory(getFactory());
-        li.setFactory2(getFactory2());
-        return li;
+        return new CalligraphyLayoutInflater(this, newContext, mAttributeId, true);
     }
 
     // ===
