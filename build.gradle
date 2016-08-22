@@ -10,6 +10,9 @@ android {
         versionCode 210
         versionName "2.1.0?"
         consumerProguardFiles 'consumer-proguard-rules.txt'
+        jackOptions {
+			enabled true
+		}
     }
 
     buildTypes {
