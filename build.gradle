@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.4.0-alpha7'
-        classpath 'com.github.nao20010128nao:AndroidDailyOverride:da0e23245a'
+        classpath 'com.github.nao20010128nao:AndroidDailyOverride:524b890'
     }
 }
 com.nao20010128nao.ADO.AndroidDailyOverride.run()
@@ -20,7 +20,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         minSdkVersion 17
